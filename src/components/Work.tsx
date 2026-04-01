@@ -5,32 +5,28 @@ import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 const projects = [
   {
-    title: "CallHQ",
-    category: "Voice AI Calling Platform",
-    tools: "Voice AI, Calling Automation, CRM Integrations",
-    image: "/images/callhq.png",
-    link: "https://callhq.ai",
+    title: "Splitwise Clone",
+    category: "Expense Splitting App",
+    tools: "Fintech UX, Data Modeling, Full-stack",
+    image: "/images/splitwise.png",
+    link: "https://github.com/sinchanghosal2",
+    placeholderIndex: 0,
   },
   {
-    title: "Whatsapp Automation",
-    category: "WABA Application",
-    tools: "WhatsApp Business API, Workflow Automation, Notifications",
-    image: "/images/whatsapp.png",
-    link: "https://whatsapp.callhq.ai",
+    title: "Expense Manager",
+    category: "Personal Finance Tracker",
+    tools: "Analytics UI, CRUD, Charts",
+    image: "/images/expense.png",
+    link: "https://github.com/sinchanghosal2",
+    placeholderIndex: 1,
   },
   {
-    title: "Broki",
-    category: "Real Estate Platform for FnB Industry",
-    tools: "Property Discovery, Lead Management, Marketplace Workflows",
-    image: "/images/broki.png",
-    link: "https://broki.in",
-  },
-  {
-    title: "Orrdr.com",
-    category: "Ecommerce Platform and Mobile App",
-    tools: "Ecommerce, Mobile Experience, Order Management",
-    image: "/images/orrdr.png",
-    link: "https://orrdr.com",
+    title: "Flappy Bird Game",
+    category: "Browser Game",
+    tools: "JavaScript, Game Loop, Animation",
+    image: "/images/flappy.png",
+    link: "https://github.com/sinchanghosal2",
+    placeholderIndex: 2,
   },
 ];
 
@@ -117,6 +113,7 @@ const Work = () => {
                         image={project.image}
                         alt={project.title}
                         link={project.link}
+                        placeholderIndex={project.placeholderIndex}
                       />
                     </div>
                   </div>

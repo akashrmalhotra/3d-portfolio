@@ -15,58 +15,43 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Co-Founder</h4>
-                <h5>CallHQ.ai</h5>
+                <h4>Business Intelligence Engineer</h4>
+                <h5>Amazon Development Center India</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>Now</h3>
             </div>
             <p>
-              Building CallHQ.ai, a voice AI platform for
-              automating customer calls, support, and conversions.
-            </p>
-          </div>
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>Adobe</h4>
-                <h5>6+ years · Noida</h5>
-              </div>
-              <h3>2017–24</h3>
-            </div>
-            <p>
-              Senior Lead Software Engineer (Feb 2024 – May 2024). Lead Software
-              Engineer (Feb 2021 – Feb 2024). Software Engineer II (Dec 2017 –
-              Feb 2021): internationalization, globalization, and localization for
-              Adobe Technical Communication Suite; functional and linguistic testing
-              strategy; in-house tooling; collaboration with product and engineering
-              for high-quality localized releases.
+              Built Last Mile delivery analytics pipelines processing 10+ TB/day.
+              Developed ML-ready feature datasets for predictive modeling on SageMaker.
+              Optimized queries and data models to reduce cost and latency across
+              global WBR reporting.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
                 <h4>Consultant</h4>
-                <h5>Genpact Headstrong </h5>
+                <h5>Deloitte Touche Tohmatsu India LLP</h5>
               </div>
-              <h3>2016–17</h3>
+              <h3>2021–2025</h3>
             </div>
             <p>
-              Sep 2016 – Nov 2017. Developed and maintained WCF services consumed
-              by the UI; deployment support across environments; NUnit tests and
-              coverage; bug fixes from QA and users; database work.
+              Data Engineering & Analytics. Built Databricks pipelines across
+              9 global markets, delivered 85+ Power BI dashboards with 80% adoption
+              growth, and implemented CI/CD for BI assets cutting release cycles by 50%.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Sf Engineer</h4>
-                <h5>Infogain</h5>
+                <h4>Associate Software Engineer</h4>
+                <h5>Ernst &amp; Young GDS</h5>
               </div>
-              <h3>2013-16</h3>
+              <h3>Early Career</h3>
             </div>
             <p>
-              Software engineering across enterprise projects, contributing to
-              design, development, and delivery of business applications.
+              Built foundational analytics workflows and reporting support.
+              Collaborated across stakeholders on data delivery.
             </p>
           </div>
         </div>

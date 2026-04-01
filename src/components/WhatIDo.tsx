@@ -87,20 +87,21 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>AI & AUTOMATION</h3>
-              <h4>Workflow Intelligence for Organizations</h4>
+              <h3>DATA ENGINEERING</h3>
+              <h4>ETL · Modeling · Governance</h4>
               <p>
-                AI specialist helping organizations automate workflows—internal ops
-                and customer-facing—so teams ship faster with less manual work.
+                Design and optimize distributed ETL pipelines, data models, and
+                scalable storage strategies across AWS and Azure for petabyte-scale
+                workloads.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">LLMs &amp; agents</div>
-                <div className="what-tags">Workflow design</div>
-                <div className="what-tags">RAG &amp; retrieval</div>
-                <div className="what-tags">Evals &amp; guardrails</div>
-                <div className="what-tags">Integrations</div>
-                <div className="what-tags">Product strategy</div>
+                <div className="what-tags">PySpark &amp; Spark SQL</div>
+                <div className="what-tags">Delta Lake</div>
+                <div className="what-tags">Distributed ETL</div>
+                <div className="what-tags">Data Modeling</div>
+                <div className="what-tags">Airflow</div>
+                <div className="what-tags">CI/CD</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -124,21 +125,20 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>BUILD &amp; SCALE</h3>
-              <h4>Shipping AI in Production</h4>
+              <h3>ANALYTICS &amp; BI</h3>
+              <h4>Power BI · QuickSight · ML Enablement</h4>
               <p>
-                I build the systems behind it: APIs, data, voice/real-time, and
-                full-stack products—production-ready, not slide decks.
+                Executive dashboards, KPI frameworks, and ML-ready feature pipelines
+                that move teams from raw signals to confident decisions.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">Python</div>
-                <div className="what-tags">REST &amp; real-time APIs</div>
-                <div className="what-tags">PostgreSQL</div>
-                <div className="what-tags">MongoDB</div>
-                <div className="what-tags">React</div>
-                <div className="what-tags">Cloud &amp; infra</div>
+                <div className="what-tags">Power BI</div>
+                <div className="what-tags">QuickSight</div>
+                <div className="what-tags">SageMaker</div>
+                <div className="what-tags">XGBoost</div>
+                <div className="what-tags">Feature Pipelines</div>
+                <div className="what-tags">Python &amp; SQL</div>
               </div>
               <div className="what-arrow"></div>
             </div>
