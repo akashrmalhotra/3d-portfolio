@@ -55,6 +55,7 @@
   display: flex;
   width: 40%;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 50px;
 }
 
@@ -63,6 +64,7 @@
   margin: 0;
   font-weight: 500;
   line-height: 45px;
+  white-space: nowrap;
 }
 
 .career-info h4 {

@@ -1,16 +1,20 @@
 import { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
+import WorkPlaceholder from "./WorkPlaceholder";
 
 interface Props {
   image: string;
   alt?: string;
   video?: string;
   link?: string;
+  placeholderIndex?: number;
 }
 
 const WorkImage = (props: Props) => {
   const [isVideo, setIsVideo] = useState(false);
   const [video, setVideo] = useState("");
+  const [imgError, setImgError] = useState(false);
+
   const handleMouseEnter = async () => {
     if (props.video) {
       setIsVideo(true);
@@ -20,6 +24,8 @@ const WorkImage = (props: Props) => {
       setVideo(blobUrl);
     }
   };
+
+  const showPlaceholder = imgError && props.placeholderIndex !== undefined;
 
   return (
     <div className="work-image">
@@ -36,7 +42,15 @@ const WorkImage = (props: Props) => {
             <MdArrowOutward />
           </div>
         )}
-        <img src={props.image} alt={props.alt} />
+        {showPlaceholder ? (
+          <WorkPlaceholder index={props.placeholderIndex!} />
+        ) : (
+          <img
+            src={props.image}
+            alt={props.alt}
+            onError={() => setImgError(true)}
+          />
+        )}
         {isVideo && <video src={video} autoPlay muted playsInline loop></video>}
       </a>
     </div>

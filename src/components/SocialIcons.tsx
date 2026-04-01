@@ -1,8 +1,6 @@
 import {
   FaGithub,
-  FaInstagram,
   FaLinkedinIn,
-  FaYoutube,
 } from "react-icons/fa6";
 import "./styles/SocialIcons.css";
 import { TbNotes } from "react-icons/tb";
@@ -61,7 +59,7 @@ const SocialIcons = () => {
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
           <a
-            href="https://github.com/akashrmalhotra"
+            href="https://github.com/sinchanghosal2"
             target="_blank"
             rel="noreferrer"
           >
@@ -70,35 +68,17 @@ const SocialIcons = () => {
         </span>
         <span>
           <a
-            href="https://www.linkedin.com/in/akashrmalhotra/"
+            href="https://www.linkedin.com/in/sinchanghosal"
             target="_blank"
             rel="noreferrer"
           >
             <FaLinkedinIn />
           </a>
         </span>
-        <span>
-          <a
-            href="https://www.youtube.com/@Leftbraincoder"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaYoutube />
-          </a>
-        </span>
-        <span>
-          <a
-            href="https://www.instagram.com/leftbraincoder/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaInstagram />
-          </a>
-        </span>
       </div>
       <a
         className="resume-button"
-        href="/Akash_Malhotra.pdf"
+        href="/Sinchan_Ghosal.pdf"
         target="_blank"
         rel="noreferrer"
       >

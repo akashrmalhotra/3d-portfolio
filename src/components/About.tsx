@@ -6,11 +6,14 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          I am currently co-founder of CallHQ.ai, building real-time voice AI for
-          businesses. I am a technologist at heart with strong business judgment—
-          I enjoy going from product strategy to hands-on engineering. My background
-          spans leadership at Adobe, founding Broki and CallHQ, and shipping
-          full-stack products end to end.
+          I help companies build resilient data foundations and analytics experiences
+          that scale with the business. My background spans business intelligence,
+          data engineering, and ML enablement—shipping pipelines across AWS and Azure,
+          optimizing compute spend, and making data trustworthy. Currently at Amazon
+          Development Center India, I design high-volume ETL pipelines, orchestrate
+          complex Airflow workflows, and power executive decisioning through global
+          reporting. Previously at Deloitte, I led multi-market data programs and
+          dashboard rollouts across 9 regions.
         </p>
       </div>
     </div>
