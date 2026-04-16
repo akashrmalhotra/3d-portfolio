@@ -2,6 +2,7 @@ import {
   FaGithub,
   FaInstagram,
   FaLinkedinIn,
+  FaTwitter,
   FaYoutube,
 } from "react-icons/fa6";
 import "./styles/SocialIcons.css";
@@ -59,7 +60,7 @@ const SocialIcons = () => {
   return (
     <div className="icons-section">
       <div className="social-icons" data-cursor="icons" id="social">
-        <span>
+        {/* <span>
           <a
             href="https://github.com/akashrmalhotra"
             target="_blank"
@@ -67,10 +68,11 @@ const SocialIcons = () => {
           >
             <FaGithub />
           </a>
-        </span>
+        </span> */}
         <span>
           <a
-            href="https://www.linkedin.com/in/akashrmalhotra/"
+            href="https://www.linkedin.com/in/ayushsharma1175
+"
             target="_blank"
             rel="noreferrer"
           >
@@ -83,7 +85,7 @@ const SocialIcons = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <FaYoutube />
+            <FaTwitter />
           </a>
         </span>
         <span>
@@ -98,7 +100,7 @@ const SocialIcons = () => {
       </div>
       <a
         className="resume-button"
-        href="/Akash_Malhotra.pdf"
+        href="/Ayush_Resume.pdf"
         target="_blank"
         rel="noreferrer"
       >

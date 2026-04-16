@@ -11,25 +11,25 @@ const Contact = () => {
             <h4>Connect</h4>
             <p>
               <a
-                href="https://www.linkedin.com/in/akashrmalhotra/"
+                href="https://http://www.linkedin.com/in/ayushsharma1175"
                 target="_blank"
                 rel="noreferrer"
                 data-cursor="disable"
               >
-                LinkedIn — akashrmalhotra
+                LinkedIn — Ayush Sharma
               </a>
             </p>
             <h4>Education</h4>
             <p>
-              PGPWE (MBA), Indian Institute of Management, Lucknow — 2021–2023
+              Digital Marketing (BBA), IILM UNIVERSITY, G.NOIDA — 2023–2026
             </p>
-            <p>
+            {/* <p>
               B.Tech Computer Science, Manav Rachna Educational Institutions —
               2009–2013
-            </p>
+            </p> */}
           </div>
           <div className="contact-box">
-            <h4>Social</h4>
+            {/* <h4>Social</h4>
             <a
               href="https://github.com/akashrmalhotra"
               target="_blank"
@@ -38,8 +38,8 @@ const Contact = () => {
               className="contact-social"
             >
               GitHub <MdArrowOutward />
-            </a>
-            <a
+            </a> */}
+            {/* <a
               href="https://www.linkedin.com/in/akashrmalhotra/"
               target="_blank"
               rel="noreferrer"
@@ -47,8 +47,8 @@ const Contact = () => {
               className="contact-social"
             >
               LinkedIn <MdArrowOutward />
-            </a>
-            <a
+            </a> */}
+            {/* <a
               href="https://www.youtube.com/@Leftbraincoder"
               target="_blank"
               rel="noreferrer"
@@ -56,8 +56,8 @@ const Contact = () => {
               className="contact-social"
             >
               YouTube <MdArrowOutward />
-            </a>
-            <a
+            </a> */}
+            {/* <a
               href="https://www.instagram.com/leftbraincoder/"
               target="_blank"
               rel="noreferrer"
@@ -65,11 +65,11 @@ const Contact = () => {
               className="contact-social"
             >
               Instagram <MdArrowOutward />
-            </a>
+            </a> */}
           </div>
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Akash Malhotra</span>
+              Designed and Developed <br /> by <span>AYUSH SHARMA</span>
             </h2>
             <h5>
               <MdCopyright /> 2026

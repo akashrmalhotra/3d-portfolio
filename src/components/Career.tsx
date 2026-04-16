@@ -15,47 +15,39 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Co-Founder</h4>
-                <h5>CallHQ.ai</h5>
+                <h4>Freelancer</h4>
+                <h5>Fiverr</h5>
               </div>
               <h3>NOW</h3>
             </div>
             <p>
-              Building CallHQ.ai, a voice AI platform for
-              automating customer calls, support, and conversions.
+              Worked with diverse clients on Fiverr, delivering quality projects while building strong creative and communication skills.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Adobe</h4>
-                <h5>6+ years · Noida</h5>
+                <h4>Graphic Designer</h4>
+                <h5>Designing dots</h5>
               </div>
-              <h3>2017–24</h3>
+              <h4>2024–25</h4>
             </div>
             <p>
-              Senior Lead Software Engineer (Feb 2024 – May 2024). Lead Software
-              Engineer (Feb 2021 – Feb 2024). Software Engineer II (Dec 2017 –
-              Feb 2021): internationalization, globalization, and localization for
-              Adobe Technical Communication Suite; functional and linguistic testing
-              strategy; in-house tooling; collaboration with product and engineering
-              for high-quality localized releases.
+              Worked as a Graphic Designer at Designing Dots, a personal branding agency, creating visually engaging content for clients. Collaborated closely with clients to understand their vision and deliver designs that strengthened their personal brand identity.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Consultant</h4>
-                <h5>Genpact Headstrong </h5>
+                <h4>Internships</h4>
+                <h5>Social media executive </h5>
               </div>
-              <h3>2016–17</h3>
+              <h4>2025–26</h4>
             </div>
             <p>
-              Sep 2016 – Nov 2017. Developed and maintained WCF services consumed
-              by the UI; deployment support across environments; NUnit tests and
-              coverage; bug fixes from QA and users; database work.
+              June 2025 – September 2025. I completed my internship at Amrit Aura and Serif Studio, where I worked on social media management, content creation, and building brand presence.
             </p>
-          </div>
+          {/* </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
@@ -63,11 +55,11 @@ const Career = () => {
                 <h5>Infogain</h5>
               </div>
               <h3>2013-16</h3>
-            </div>
-            <p>
+            </div> */}
+            {/* <p>
               Software engineering across enterprise projects, contributing to
               design, development, and delivery of business applications.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
