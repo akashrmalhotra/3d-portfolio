@@ -133,7 +133,8 @@ const WhatIDo = () => {
                 approvals and higher yields. Revenue flows the other way:
                 banks pay for credit-scoring APIs, insurers pay for crop-risk
                 underwriting, governments fund insurance oversight. Agriculture
-                is the moat. Finance is the cash.
+                is the moat. Finance is the cash. This is exactly where Satyukt
+                competes.
               </p>
               <h5>Who pays</h5>
               <div className="what-content-flex">

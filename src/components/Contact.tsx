@@ -64,6 +64,10 @@ const Contact = () => {
             <h2>
               The Strategy <br /> is to <span>deepen</span>
             </h2>
+            <p>
+              Bundle credit, insurance and advisory in India before exporting the
+              model. Going global isn&apos;t flipping a switch.
+            </p>
             <h5>
               <MdCopyright /> 2026 — A Strategic Analysis
             </h5>
