@@ -9,6 +9,7 @@ export const sections = [
   { id: "platform", label: "Platform Illusion" },
   { id: "context", label: "National Context" },
   { id: "value", label: "Value Proposition" },
+  { id: "vision", label: "AgriTech Vision" },
   { id: "evolution", label: "Evolution" },
   { id: "synthesis", label: "Synthesis" },
   { id: "inclusion", label: "Algorithmic Inclusion" },

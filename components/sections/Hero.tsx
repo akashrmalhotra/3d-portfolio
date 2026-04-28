@@ -1,19 +1,37 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Satellite } from "lucide-react";
+import { useRef } from "react";
 import { hero } from "@/lib/content";
 
 export default function Hero() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const titleY = useSpring(useTransform(scrollYProgress, [0, 1], [0, 240]), {
+    stiffness: 100,
+    damping: 26,
+  });
+  const titleScale = useTransform(scrollYProgress, [0, 1], [1, 0.78]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.65, 1], [1, 0.6, 0]);
+  const bgYLeft = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const bgYRight = useTransform(scrollYProgress, [0, 1], ["0%", "-25%"]);
+  const satY = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const satRot = useTransform(scrollYProgress, [0, 1], [0, 25]);
+
   const words = hero.title.split(" ");
   return (
     <section
+      ref={ref}
       id="hero"
       className="relative isolate flex min-h-screen w-full items-center overflow-hidden"
     >
-      {/* Split background */}
+      {/* Split background with parallax */}
       <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2">
-        <div className="pattern-topo relative">
+        <motion.div style={{ y: bgYLeft }} className="pattern-topo relative">
           <motion.div
             aria-hidden
             className="absolute inset-0"
@@ -21,23 +39,28 @@ export default function Hero() {
             animate={{ scale: [1.04, 1.0, 1.04] }}
             transition={{ duration: 22, ease: "easeInOut", repeat: Infinity }}
           />
-        </div>
-        <div className="pattern-iso relative">
+        </motion.div>
+        <motion.div style={{ y: bgYRight }} className="pattern-iso relative">
           <motion.div
             aria-hidden
             className="absolute inset-0"
             animate={{ backgroundPositionX: ["0px", "40px"] }}
             transition={{ duration: 18, ease: "linear", repeat: Infinity }}
           />
-          <Satellite
-            className="absolute right-[14%] top-[18%] h-12 w-12 text-deepGreen"
-            strokeWidth={1.6}
-          />
-        </div>
+          <motion.div
+            style={{ y: satY, rotate: satRot }}
+            className="absolute right-[14%] top-[18%]"
+          >
+            <Satellite className="h-12 w-12 text-deepGreen" strokeWidth={1.6} />
+          </motion.div>
+        </motion.div>
       </div>
 
-      {/* Floating title card */}
-      <div className="relative mx-auto w-full max-w-5xl px-6">
+      {/* Floating title card with scroll fade-out */}
+      <motion.div
+        style={{ y: titleY, scale: titleScale, opacity: titleOpacity }}
+        className="relative mx-auto w-full max-w-5xl px-6"
+      >
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,7 +108,7 @@ export default function Hero() {
             className="mx-auto mt-2 h-6 w-px bg-navy/40"
           />
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
