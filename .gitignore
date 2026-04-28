@@ -10,6 +10,8 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.next
+out
 *.local
 
 # Editor directories and files
@@ -26,4 +28,7 @@ dist-ssr
 
 backup/
 .env
+.env*.local
 ._*
+*.tsbuildinfo
+.turbo
