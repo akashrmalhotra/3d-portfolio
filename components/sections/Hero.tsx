@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { Satellite } from "lucide-react";
 import { useRef } from "react";
 import { hero } from "@/lib/content";
 
@@ -11,85 +10,112 @@ export default function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const titleY = useSpring(useTransform(scrollYProgress, [0, 1], [0, 240]), {
+  const titleY = useSpring(useTransform(scrollYProgress, [0, 1], [0, 220]), {
     stiffness: 100,
     damping: 26,
   });
-  const titleScale = useTransform(scrollYProgress, [0, 1], [1, 0.78]);
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.65, 1], [1, 0.6, 0]);
-  const bgYLeft = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const bgYRight = useTransform(scrollYProgress, [0, 1], ["0%", "-25%"]);
-  const satY = useTransform(scrollYProgress, [0, 1], [0, -120]);
-  const satRot = useTransform(scrollYProgress, [0, 1], [0, 25]);
+  const titleScale = useTransform(scrollYProgress, [0, 1], [1, 0.82]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.65, 1], [1, 0.5, 0]);
+  const threadX = useTransform(scrollYProgress, [0, 1], [0, 80]);
 
   const words = hero.title.split(" ");
+
   return (
     <section
       ref={ref}
       id="hero"
       className="relative isolate flex min-h-screen w-full items-center overflow-hidden"
     >
-      {/* Split background with parallax */}
-      <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2">
-        <motion.div style={{ y: bgYLeft }} className="pattern-topo relative">
-          <motion.div
-            aria-hidden
-            className="absolute inset-0"
-            initial={{ scale: 1.04 }}
-            animate={{ scale: [1.04, 1.0, 1.04] }}
-            transition={{ duration: 22, ease: "easeInOut", repeat: Infinity }}
-          />
-        </motion.div>
-        <motion.div style={{ y: bgYRight }} className="pattern-iso relative">
-          <motion.div
-            aria-hidden
-            className="absolute inset-0"
-            animate={{ backgroundPositionX: ["0px", "40px"] }}
-            transition={{ duration: 18, ease: "linear", repeat: Infinity }}
-          />
-          <motion.div
-            style={{ y: satY, rotate: satRot }}
-            className="absolute right-[14%] top-[18%]"
-          >
-            <Satellite className="h-12 w-12 text-deepGreen" strokeWidth={1.6} />
-          </motion.div>
-        </motion.div>
-      </div>
+      {/* Cream grid background */}
+      <div className="absolute inset-0 pattern-grid" />
+      <div className="absolute inset-0 bg-gradient-to-b from-cream via-cream to-cream-warm/40" />
 
-      {/* Floating title card with scroll fade-out */}
+      {/* Floating navy panel with title — hugs the slide composition */}
       <motion.div
         style={{ y: titleY, scale: titleScale, opacity: titleOpacity }}
-        className="relative mx-auto w-full max-w-5xl px-6"
+        className="relative z-10 mx-auto w-full max-w-7xl px-6"
       >
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-2xl bg-offwhite/95 p-8 shadow-[0_30px_80px_-30px_rgba(15,30,61,0.35)] ring-1 ring-navy/5 backdrop-blur-sm md:p-12"
+          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+          className="relative overflow-hidden rounded-3xl bg-navy px-8 py-14 shadow-[0_50px_120px_-30px_rgba(10,31,61,0.55)] ring-1 ring-navy-light/40 md:px-16 md:py-24"
         >
-          <h1 className="font-serif text-4xl leading-[1.05] tracking-tight text-navy md:text-6xl lg:text-7xl">
+          {/* eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="mb-10 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-gold-soft/80"
+          >
+            <span className="h-px w-8 bg-gold/60" />
+            {hero.eyebrow}
+          </motion.div>
+
+          <h1 className="font-serif text-4xl font-bold leading-[1.02] tracking-tight text-cream md:text-7xl lg:text-[5.5rem]">
             {words.map((w, i) => (
-              <motion.span
-                key={i}
-                initial={{ y: 60, opacity: 0, rotateX: -40 }}
-                animate={{ y: 0, opacity: 1, rotateX: 0 }}
-                transition={{
-                  delay: 0.1 + i * 0.08,
-                  duration: 0.8,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                className="mr-3 inline-block"
-                style={{ transformOrigin: "0% 100%" }}
-              >
-                {w}
-              </motion.span>
+              <span key={i} className="inline-block overflow-hidden align-bottom mr-3">
+                <motion.span
+                  initial={{ y: "110%", rotateX: -40 }}
+                  animate={{ y: "0%", rotateX: 0 }}
+                  transition={{
+                    delay: 0.2 + i * 0.07,
+                    duration: 0.95,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  className="inline-block"
+                  style={{ transformOrigin: "0% 100%" }}
+                >
+                  {w}
+                </motion.span>
+              </span>
             ))}
           </h1>
+
+          {/* Frayed gold thread */}
+          <motion.div
+            style={{ x: threadX }}
+            className="pointer-events-none absolute bottom-[36%] left-0 right-0 h-px"
+          >
+            <svg
+              viewBox="0 0 1200 60"
+              preserveAspectRatio="none"
+              className="h-12 w-full"
+            >
+              <motion.path
+                d="M0 30 Q 200 20, 420 32 T 820 28 Q 950 27 1010 30"
+                stroke="#C9A961"
+                strokeWidth="1.6"
+                fill="none"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              />
+              {/* frayed ends */}
+              {Array.from({ length: 8 }).map((_, i) => (
+                <motion.path
+                  key={i}
+                  d={`M1010 30 Q ${1040 + i * 4} ${22 + (i % 3) * 6}, ${1100 + i * 8} ${10 + i * 5}`}
+                  stroke="#C9A961"
+                  strokeWidth="0.9"
+                  fill="none"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={{ pathLength: 1, opacity: 0.65 }}
+                  transition={{
+                    duration: 1.2,
+                    delay: 1.8 + i * 0.07,
+                    ease: "easeOut",
+                  }}
+                />
+              ))}
+            </svg>
+          </motion.div>
+
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.7 }}
-            className="mt-6 text-lg text-navy/70 md:text-xl"
+            transition={{ delay: 1.4, duration: 0.7 }}
+            className="mt-16 max-w-2xl font-serif text-xl italic text-gold md:text-2xl"
           >
             {hero.subtitle}
           </motion.p>
@@ -98,14 +124,14 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.6, duration: 0.6 }}
-          className="absolute -bottom-24 left-1/2 -translate-x-1/2 text-center text-xs uppercase tracking-[0.3em] text-navy/50"
+          transition={{ delay: 2, duration: 0.6 }}
+          className="absolute -bottom-20 left-1/2 -translate-x-1/2 text-center text-[10px] uppercase tracking-[0.3em] text-navy/50"
         >
-          <div>scroll</div>
+          <div>scroll to enter</div>
           <motion.div
-            animate={{ y: [0, 8, 0] }}
+            animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            className="mx-auto mt-2 h-6 w-px bg-navy/40"
+            className="mx-auto mt-2 h-7 w-px bg-navy/40"
           />
         </motion.div>
       </motion.div>

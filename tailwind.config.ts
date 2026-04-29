@@ -5,33 +5,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: { DEFAULT: "#0F1E3D", light: "#1E2F4F", deep: "#081226" },
-        deepGreen: "#3A5A2B",
-        sage: "#97A97C",
-        olive: "#6B7C4A",
-        cream: { DEFAULT: "#F5F1E8", warm: "#F0E9DB" },
-        sand: "#D4C4A0",
-        terracotta: "#B85042",
-        offwhite: "#FAFAF7",
+        navy: { DEFAULT: "#0A1F3D", light: "#16315C", deep: "#06152B" },
+        gold: { DEFAULT: "#C9A961", warm: "#B89348", soft: "#E2CE9C" },
+        cyan: { DEFAULT: "#2DD4E0", light: "#A8E6F0", deep: "#0F8E9C" },
+        cream: { DEFAULT: "#F5F1E8", warm: "#EFE9D8" },
+        offwhite: "#FAF7EE",
         charcoal: "#1A1A1A",
-        skyblue: "#E8F2F7",
-        sky2: "#C4DCE8",
-        brown: { DEFAULT: "#6B4E3D", dark: "#4A3426" },
+        ink: "#4A4A4A",
       },
       fontFamily: {
-        serif: ["var(--font-fraunces)", "Georgia", "serif"],
+        serif: ["var(--font-playfair)", "Georgia", "serif"],
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       backgroundImage: {
-        "iso-grid":
-          "linear-gradient(60deg, rgba(15,30,61,0.06) 1px, transparent 1px), linear-gradient(-60deg, rgba(15,30,61,0.06) 1px, transparent 1px)",
+        "grid-fine":
+          "linear-gradient(rgba(10,31,61,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(10,31,61,0.06) 1px, transparent 1px)",
       },
-      backgroundSize: { "iso-grid": "40px 70px" },
+      backgroundSize: { "grid-fine": "32px 32px" },
       animation: {
-        "spin-slow": "spin 18s linear infinite",
-        "spin-slower": "spin 36s linear infinite",
+        "spin-slow": "spin 28s linear infinite",
+        "spin-slower": "spin 60s linear infinite",
         float: "float 6s ease-in-out infinite",
         "dash-slow": "dash 14s linear infinite",
+        "pulse-soft": "pulseSoft 2.6s ease-in-out infinite",
       },
       keyframes: {
         float: {
@@ -39,6 +35,10 @@ const config: Config = {
           "50%": { transform: "translateY(-12px)" },
         },
         dash: { to: { strokeDashoffset: "-200" } },
+        pulseSoft: {
+          "0%,100%": { opacity: "0.6", transform: "scale(1)" },
+          "50%": { opacity: "1", transform: "scale(1.05)" },
+        },
       },
     },
   },

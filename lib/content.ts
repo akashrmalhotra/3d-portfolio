@@ -1,272 +1,333 @@
-// Single source of truth — every word here comes from the Satyukt deck brief.
+// Single source of truth — every word here comes from the Raymond platform deck.
 
 export const sections = [
   { id: "hero", label: "Hero" },
-  { id: "opening", label: "Opening Question" },
-  { id: "surface", label: "Surface Reality" },
-  { id: "domain", label: "The Domain" },
-  { id: "moat", label: "Moat Funnel" },
-  { id: "platform", label: "Platform Illusion" },
-  { id: "context", label: "National Context" },
-  { id: "value", label: "Value Proposition" },
-  { id: "vision", label: "AgriTech Vision" },
-  { id: "evolution", label: "Evolution" },
-  { id: "synthesis", label: "Synthesis" },
-  { id: "inclusion", label: "Algorithmic Inclusion" },
-  { id: "governance", label: "Model Governance" },
-  { id: "quadrant", label: "Strategic Quadrant" },
-  { id: "verdict", label: "Final Verdict" },
+  { id: "glance", label: "Raymond at a Glance" },
+  { id: "macro", label: "The Macro Disconnect" },
+  { id: "flaw", label: "The Structural Flaw" },
+  { id: "blindspot", label: "The Blind Spot" },
+  { id: "dormant", label: "The Dormant Asset" },
+  { id: "catalyst", label: "The Catalyst" },
+  { id: "architecture", label: "The New Architecture" },
+  { id: "exchange", label: "The Value Exchange" },
+  { id: "shift", label: "The Model Shift" },
+  { id: "defensibility", label: "The Defensibility" },
+  { id: "impact", label: "The Market Impact" },
+  { id: "advantage", label: "The Unfair Advantage" },
+  { id: "closing", label: "Closing" },
 ] as const;
 
 export const hero = {
-  title: "Satyukt: Selling Trust, Not Satellites.",
-  subtitle: "Platformization of AI in Agriculture | Strategic Analysis",
+  eyebrow: "Raymond · Strategy Memo",
+  title: "The Complete Man. The Incomplete Platform.",
+  subtitle: "Platformising Raymond's latent network of 20,000 tailors.",
 };
 
-export const openingQuestion = {
-  eyebrow: "The Opening Question — Bengaluru, 2020",
-  setup: "A founder sits with a choice. Two doors.",
-  doors: [
-    {
-      key: "deeper",
-      title: "Go Deeper",
-      body: "Build more services for the existing user base of farmers and institutions in India.",
-      preview: "Compounding trust, slower TAM growth.",
-    },
-    {
-      key: "global",
-      title: "Go Global",
-      body: "Take the satellite-based products to other geographies and emerging markets.",
-      preview: "Faster TAM, weaker moat.",
-    },
+export const glance = {
+  eyebrow: "01 · The Illusion of Control",
+  title: "Raymond at a Glance",
+  metrics: [
+    { value: "₹9,286 Cr", label: "Highest-ever consolidated revenue (FY2024)" },
+    { value: "~60%", label: "Premium Suiting Market Share" },
+    { value: "1,500+", label: "Exclusive Brand Outlets across 350+ cities" },
+    { value: "20,000+", label: "Certified Tailors" },
   ],
-  footer: "Before we choose a door, we need to understand what Satyukt actually is.",
+  footer:
+    "Raymond operates the most successful physical textile pipeline in India. But a pipeline is built to push product, not to capture identity.",
 };
 
-export const surfaceReality = {
-  title: "The Surface Reality: A Textbook AgriTech Success",
-  subtitle: "On paper, Satyukt looks like four products in a portfolio.",
-  products: [
-    { name: "Sat2Farm", audience: "B2C", does: "Farm advisory" },
-    { name: "Sat2Credit", audience: "B2B", does: "Lending" },
-    { name: "Sat4Agri", audience: "B2B", does: "Agri-enterprise" },
-    { name: "Sat4Risk", audience: "B2G / B2B", does: "Crop insurance" },
-  ],
-  stats: [
-    { value: "2018", label: "Founded (IISc / ISRO DNA)" },
-    { value: "18", label: "Countries served" },
-    { value: "$500K", label: "Backed by NABARD + Social Alpha" },
-  ],
+export const macro = {
+  eyebrow: "02 · The Macro Disconnect",
+  title: "12 Million tailors. Zero data.",
+  left: {
+    big: "12 Million",
+    label: "Custom Tailors in India",
+    points: [
+      "Accounts for 17% of all manufacturing employment (up from 7% in 2005).",
+      "5 Million new tailoring jobs added between 2018 and 2024 alone.",
+    ],
+  },
+  right: {
+    big: "Zero Data.",
+    points: [
+      "No customer identities post-purchase.",
+      "No body measurements on file.",
+      "No visibility into occasion triggers.",
+    ],
+  },
 };
 
-export const domain = {
-  title: "The Domain: This isn't a yield problem.",
-  stats: [
-    {
-      big: "~60%",
-      body: "of Indians depend on agriculture… yet it contributes only ~15% to GDP.",
-    },
-    {
-      big: "50%",
-      body: "of small & marginal farmers cannot borrow from any formal source.",
-    },
-  ],
-  pullquote:
-    "Satyukt isn't here to grow more rice. It is here to make farmers legible to capital.",
+export const flaw = {
+  eyebrow: "03 · The Structural Flaw",
+  title: "The pipeline that breaks at the point of sale.",
+  pre: ["Gwalior Mills", "Distribution", "Retail Store (Point of Sale)"],
+  post: ["Fit", "Occasion", "Reorder"],
+  preCaption: "Raymond sees, controls, and monetizes everything here.",
+  postCaption:
+    "Raymond exits here. The exact moment the fabric transforms into personal identity, the relationship terminates.",
 };
 
-export const moatFunnel = {
-  title: "The Technology: The satellite data is free. The algorithm isn't.",
-  stages: [
+export const blindspot = {
+  eyebrow: "04 · The Blind Spot",
+  title: "The five actors Raymond cannot see.",
+  actors: [
     {
-      label: "Input: Pixels (Commodity)",
-      body: "ISRO, NASA, Sentinel. Free or cheap satellite imagery.",
-      tone: "sage",
+      name: "The End Customer",
+      body: "Demand driven by life occasions, but remains anonymous.",
     },
     {
-      label: "Filter: Models (The IP)",
-      body: "India-tuned algorithms for NPK, NDVI-to-yield, and soil moisture. Fitted on local crops, monsoons, and KCC data.",
-      tone: "teal",
-      moat: true,
+      name: "The Independent Tailor",
+      body: "Recommends fabric and controls the repeat relationship.",
     },
     {
-      label: "Output: Decisions (The Product)",
-      body: "Highly specific outputs: should this farmer get credit? Should we insure this region? When to spray?",
-      tone: "navy",
-    },
-  ],
-  takeaway:
-    "Anyone can buy the pixels. Almost no one has the India-tuned models.",
-};
-
-export const platformIllusion = {
-  title: "The Platform Illusion: A Multi-Product Data Business",
-  spokes: [
-    {
-      who: "Farmers (B2C)",
-      flow: "Subscription Fee ⇄ Data",
-      reason:
-        "Farmers send raw data, Satyukt sends advisories back. Each farmer's data doesn't make the next farmer's experience better.",
+      name: "The Corporate Manager",
+      body: "Controls massive uniform budgets via fragmented vendors.",
     },
     {
-      who: "Banks (B2B)",
-      flow: "Data Fee ⇄ Processed Data",
-      reason:
-        "Banks pay for credit-scoring APIs. Data flows in, money flows out. Banks don't make Satyukt better for the next bank.",
+      name: "The Wedding Planner",
+      body: "Coordinates multi-city trousseaus manually.",
     },
     {
-      who: "Insurers / Govt (B2G)",
-      flow: "Data Fee ⇄ Processed Data",
-      reason:
-        "Insurers and PMFBY pay for crop-risk underwriting. The relationship is transactional, not compounding.",
-    },
-    {
-      who: "Agri-Enterprises (B2B)",
-      flow: "Data Fee ⇄ Processed Data",
-      reason:
-        "Enterprises buy field-level analytics. The next enterprise gets the same product, not a smarter one.",
-    },
-  ],
-  verdict:
-    "Not a platform. Not yet. The flywheel hasn't started spinning. It relies on linear subscription and data fees.",
-};
-
-export const nationalContext = {
-  title: "The National Context: What makes it work in India, makes it hard to leave.",
-  rows: [
-    {
-      tailwind: "ISRO Partnership: Free, India-specific data.",
-      lockin: "Data sovereignty risks; models must be retrained for foreign satellites.",
-    },
-    {
-      tailwind: "NABARD + PMFBY: Govt-subsidized scheme creates massive demand.",
-      lockin: "Subsidy dependency; vulnerable to policy shifts.",
-    },
-    {
-      tailwind: "DILRMP Land Records: Digitized parcels enable farm-level analytics.",
-      lockin: "Hissa fragmentation; messy sub-plot ownership mapping.",
-    },
-    {
-      tailwind: "KCC Infrastructure: 50M farmers in a formal credit funnel.",
-      lockin: "Total credit-rail specificity; other countries lack a KCC equivalent.",
+      name: "The Urban Professional",
+      body: "Demands digital speed and personalization, finding none.",
     },
   ],
   footer:
-    "Going global ≠ flipping a switch. It means rebuilding institutional scaffolding country by country.",
+    "All five actors make decisions that dictate Raymond's revenue. None are connected to Raymond's data infrastructure.",
 };
 
-export const valueProposition = {
-  title: "The Value Proposition: Farmers benefit. Institutions pay.",
-  flows: [
-    { kind: "value", to: "The Farmer", body: "Better advisories, formal credit access, insurance approvals, and higher yields." },
-    { kind: "revenue", to: "Banks", body: "Pay for credit-scoring APIs." },
-    { kind: "revenue", to: "Insurers", body: "Pay for crop-risk underwriting." },
-    { kind: "revenue", to: "Govt Agencies", body: "Fund insurance oversight." },
+export const dormant = {
+  eyebrow: "05 · The Dormant Asset",
+  title: "20,000 Tailors, 2 Million Invisible Customers.",
+  points: [
+    "Raymond's 20,000 certified tailors are not a legacy training program. They are the pre-warmed, dormant supply side of a digital marketplace.",
+    "At a conservative 100 loyal clients per tailor, this network represents indirect relationships with 2 Million Indian consumers.",
+    "The permission layer — brand trust — already exists. The physical touchpoints — 1,500 stores — already exist.",
+  ],
+  punch: "We do not need to acquire the market. We just need to awaken it.",
+};
+
+export const catalyst = {
+  eyebrow: "06 · The Catalyst",
+  title: "The technology that changes everything.",
+  pillars: [
+    {
+      tag: "01",
+      name: "3D Body Scanning",
+      bullets: [
+        "Smartphone-based, 2-photo scanning captures 40+ measurements with sub-centimeter accuracy.",
+        "Cost has fallen below ₹50 per scan at scale.",
+        "Converts one-time tailor visits into permanent, portable digital assets.",
+      ],
+    },
+    {
+      tag: "02",
+      name: "AI Fit Intelligence",
+      bullets: [
+        "Machine learning models train on garment-fit outcomes across 20,000 tailors.",
+        "Homogenizes quality: a new tailor instantly inherits a century of collective fitting expertise.",
+      ],
+    },
+    {
+      tag: "03",
+      name: "Demand Signal Engine",
+      bullets: [
+        "Aggregating booking patterns provides Gwalior mills with fabric demand signals 6–8 weeks in advance.",
+        "Shifts the supply chain from reactive production to anticipatory intelligence.",
+      ],
+    },
+  ],
+};
+
+export const architecture = {
+  eyebrow: "07 · The New Architecture",
+  title: "Introducing the Raymond Platform.",
+  sides: [
+    {
+      pos: "top",
+      name: "The Customer",
+      mode: "Free Access",
+      value: "Your fit, anywhere in India, carried forever.",
+      data: "Permanent body profile & occasion calendar.",
+    },
+    {
+      pos: "right",
+      name: "The Tailor",
+      mode: "Freemium / Paid",
+      value: "Raymond's intelligence behind every stitch.",
+      data: "Client measurement database & demand forecasting.",
+    },
+    {
+      pos: "bottom",
+      name: "Corporate Client",
+      mode: "Paid Subscription",
+      value: "One contract. Every city. Every employee.",
+      data: "Centralized uniform management & ESG traceability.",
+    },
+    {
+      pos: "left",
+      name: "Wedding Ecosystem",
+      mode: "Paid / Rev-Share",
+      value: "The entire groom's wardrobe, coordinated.",
+      data: "Multi-person, multi-city trousseau alignment.",
+    },
   ],
   caption:
-    "Exception: Farmers pay a small Sat2Farm subscription — but it's the smallest revenue line and the weakest moat.",
+    "Data flows inward as identity. Value and intelligence flow outward to every side.",
 };
 
-export const evolution = {
-  title: "The Evolution: Monetizing by moving closer to the decision.",
-  steps: [
-    { year: "2018", label: "Consultancy", body: "Selling raw analyses. Lowest value captured." },
-    { year: "2019", label: "Sat2Farm", body: "Selling advisories to farmers." },
-    { year: "2020", label: "Sat2Credit & Sat4Risk", body: "Selling decisions to institutions. High value captured." },
-    { year: "Next", label: "Trust Infrastructure", body: "Selling ongoing risk / credit relationships." },
+export const exchange = {
+  eyebrow: "08 · The Value Exchange",
+  title: "A moat that gets deeper every day.",
+  stages: [
+    {
+      n: 1,
+      label: "High-value orders",
+      body: "Corporate & Wedding demand feeds high-value, predictable orders to Tailors.",
+    },
+    {
+      n: 2,
+      label: "Supply expands",
+      body: "Increased prosperity and digital tools attract more Tailors to the platform.",
+    },
+    {
+      n: 3,
+      label: "Customers arrive",
+      body: "Better tailor coverage and AI fit quality attract more End Customers.",
+    },
+    {
+      n: 4,
+      label: "Data densifies",
+      body: "More customers generate denser Data & Occasion Intelligence.",
+    },
+    {
+      n: 5,
+      label: "AI tightens",
+      body: "Denser data tightens the AI Fit Engine and attracts larger Corporate / Wedding contracts.",
+    },
   ],
-  yAxis: "VALUE CAPTURED",
-  footer: "The next step should follow this logic — not abandon it.",
+  center:
+    "Raymond monetizes the interactions of all four sides without having to directly perform the craft work.",
 };
 
-export const synthesis = {
-  title: "The Synthesis: Agriculture and Finance are Complements, not Substitutes.",
-  statement: "The real value of Satyukt lies in financial services, not agriculture.",
-  halfRight: [
-    "Institutions pay.",
-    "The Agri-finance TAM is enormous.",
-    "Sat2Credit / Sat4Risk are the revenue engines.",
+export const shift = {
+  eyebrow: "09 · The Model Shift",
+  title: "The linear pipeline becomes a multi-sided platform.",
+  rows: [
+    {
+      dim: "Revenue Model",
+      before: "One-time per-metre fabric sales.",
+      after:
+        "Multi-stream, recurring (SaaS, transaction fees, data licensing).",
+    },
+    {
+      dim: "Customer Relationship",
+      before: "Terminates at point of sale; anonymous.",
+      after: "Lifelong, portable, deepens with every occasion.",
+    },
+    {
+      dim: "Data Captured",
+      before: "SKU, location, date. Zero identity.",
+      after: "Body profiles, fit history, tailor demand, uniform records.",
+    },
+    {
+      dim: "Defensibility",
+      before: "Brand & fabric quality (replicable over time).",
+      after: "Compounding data assets & OS-level lock-in.",
+    },
+    {
+      dim: "Network Effects",
+      before: "None. Independent transactions.",
+      after: "Strong cross-side. More tailors = better AI = more customers.",
+    },
   ],
-  halfWrong: [
-    "Strip out agriculture and the credit score is just generic fintech.",
-    "The moat (crop, soil, weather models) sits entirely in agriculture.",
+};
+
+export const defensibility = {
+  eyebrow: "10 · The Defensibility",
+  title: "Operational Lock-In.",
+  rim: "Day 1 — easy to leave. Only a basic profile created.",
+  layers: [
+    {
+      label: "For Tailors",
+      body: "Entire client list, AI fit history, and reputation scores are digitized.",
+    },
+    {
+      label: "For Customers",
+      body: "Body profile, multi-city tailor history, and wedding calendars established.",
+    },
+    {
+      label: "For Corporates",
+      body: "10,000 employee measurements centralized for automated reordering.",
+    },
   ],
-  insight:
-    "Agriculture is the Moat. Finance is the Cash. This is exactly where Satyukt competes.",
+  moat:
+    "The Core Moat: switching cost is no longer a contract. It is operational continuity. Leaving means rebuilding identity and business history from absolute scratch.",
 };
 
-export const algorithmicInclusion = {
-  title: "Algorithmic Inclusion: The real shift in power dynamics",
-  before: {
-    label: "Before: The World Without Satyukt",
-    body: "Farmer — blocked by a wall of exclusion — forced to a moneylender at 24%+ interest. The bank is on the other side, unreachable.",
-    rate: "24%+ interest",
-  },
-  after: {
-    label: "After: With Satyukt",
-    body: "Farmer flows through a clean algorithmic rail to bank or insurer at lower rates. Lower rates, formal inclusion. Growth.",
-  },
-  takeaway:
-    "The counterfactual to algorithmic inclusion isn't farmer empowerment — it's total exclusion. Both the farmer and the institution win against the prior status quo.",
-};
-
-export const modelGovernance = {
-  title: "The Real Risk is Model Governance.",
-  blackBox: "The farmer is now dependent on the algorithm for financial survival.",
-  questions: [
-    "Who audits the model?",
-    "What happens if the yield estimation is artificially depressed?",
-    "What if the credit score is wrong due to a satellite glitch?",
-  ],
-  insight:
-    "Opacity, not power transfer, is the true structural threat to Satyukt's long-term viability as trust infrastructure.",
-};
-
-export const strategicQuadrant = {
-  eyebrow: "Premium consulting · Structured Finance",
-  title: "The Strategic Quadrant: Follow the moat, not the buyer.",
+export const impact = {
+  eyebrow: "11 · The Market Impact",
+  title: "Who gets disrupted, and how.",
   cells: [
     {
-      pos: "tl",
-      x: "India",
-      y: "Non-Agri",
-      label: "REJECT",
-      body: "Abandons the moat. Generic satellite analytics is commoditized.",
-      tone: "reject",
+      who: "Manyavar & Occasion Wear",
+      body: "Raymond sees the wedding in the occasion calendar 8 months ahead. Competitors only see the customer when they walk into a store.",
+      mech: "Asymmetry of Timing",
     },
     {
-      pos: "tr",
-      x: "Global",
-      y: "Non-Agri",
-      label: "REJECT",
-      body: "Two unfamiliar fronts simultaneously. Highest risk, lowest leverage.",
-      tone: "reject",
+      who: "Unorganized Tailoring (₹80k+ Cr)",
+      body: "Platform membership becomes a minimum requirement to access premium urban customers — the Zomato effect on independent tailors.",
+      mech: "Formalization Squeeze",
     },
     {
-      pos: "bl",
-      x: "India",
-      y: "Agri-Finance",
-      label: "PRIORITY 1 (DEEPEN)",
-      body: "Bundle credit + insurance + advisory. Monetize the infrastructure already built.",
-      tone: "priority1",
+      who: "Corporate Uniform Vendors",
+      body: "Displaced by a single platform offering multi-city fulfillment, automated reorders, and ESG-traceable Gwalior sourcing.",
+      mech: "Consolidation",
     },
     {
-      pos: "br",
-      x: "Global",
-      y: "Agri-Finance",
-      label: "PRIORITY 2 (EXPAND)",
-      body: "Analog markets — Bangladesh, Kenya, Indonesia. Target smallholders with state-backed insurance.",
-      tone: "priority2",
+      who: "Premium Wedding Planners",
+      body: "Planners off-platform cannot match the digital groomsmen coordination across multiple cities and body types.",
+      mech: "Capability Gap",
     },
   ],
 };
 
-export const finalVerdict = {
-  eyebrow: "The Final Verdict",
-  headline: "Satyukt isn't a satellite company. It is trust infrastructure.",
-  pillars: [
-    { n: "1", title: "The Moat", body: "is the algorithm." },
-    { n: "2", title: "The Buyer", body: "is the institution." },
-    { n: "3", title: "The Strategy", body: "is to deepen." },
+export const advantage = {
+  eyebrow: "12 · The Unfair Advantage",
+  title: "The capital cost of catching up.",
+  rows: [
+    {
+      challenge: "Trust for intimate data",
+      challengeBody: "10–15 years and ₹500+ Cr of brand building.",
+      asset: "100-year heritage.",
+      assetBody: "Top-5 most trusted Indian apparel brand.",
+    },
+    {
+      challenge: "Supply-side acquisition",
+      challengeBody: "The classic cold-start problem (0 tailors).",
+      asset: "20,000 pre-certified tailors.",
+      assetBody: "Pre-warmed, brand-loyal supply already trained.",
+    },
+    {
+      challenge: "Onboarding infrastructure",
+      challengeBody: "Impossible physical capital expenditure.",
+      asset: "1,500+ EBOs ready to convert.",
+      assetBody: "From cost centers to scan-hubs overnight.",
+    },
+    {
+      challenge: "Material integration",
+      challengeBody: "Negotiating as a weak buyer.",
+      asset: "Vertical integration via Gwalior mills.",
+      assetBody: "Native economics across the stack.",
+    },
   ],
+  synthesis:
+    "Startups must build the physical world to get the digital data. Raymond already owns the physical world; it just needs the digital connective tissue.",
+};
+
+export const closing = {
+  eyebrow: "13 · The Closing Statement",
+  title: "The synthesis of transactions into identities.",
+  lead: "The tape measure was always the product.",
+  body: "Raymond isn't abandoning its 100-year history to become a tech company. It is finally monetizing the intimate interactions its fabric has always facilitated. The market is ready. The assets are assembled. The only thing missing is the platform.",
 };

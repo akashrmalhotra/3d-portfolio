@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --navy: #0f1e3d;
-  --navy-light: #1e2f4f;
-  --green-deep: #3a5a2b;
-  --sage: #97a97c;
-  --olive: #6b7c4a;
+  --navy: #0a1f3d;
+  --navy-light: #16315c;
+  --navy-deep: #06152b;
+  --gold: #c9a961;
+  --gold-warm: #b89348;
+  --gold-soft: #e2ce9c;
+  --cyan: #2dd4e0;
+  --cyan-light: #a8e6f0;
+  --cyan-deep: #0f8e9c;
   --cream: #f5f1e8;
-  --cream-warm: #f0e9db;
-  --sand: #d4c4a0;
-  --terracotta: #b85042;
-  --offwhite: #fafaf7;
+  --cream-warm: #efe9d8;
+  --offwhite: #faf7ee;
   --charcoal: #1a1a1a;
-  --skyblue: #e8f2f7;
-  --sky2: #c4dce8;
-  --brown: #6b4e3d;
+  --ink: #4a4a4a;
 }
 
 * { box-sizing: border-box; }
@@ -29,13 +29,13 @@ body {
   font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 18px;
   line-height: 1.65;
-  font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: var(--font-fraunces), Georgia, serif;
-  letter-spacing: -0.01em;
+  font-family: var(--font-playfair), Georgia, serif;
+  letter-spacing: -0.015em;
+  font-weight: 700;
 }
 
 /* Lenis smooth-scroll required styles */
@@ -45,38 +45,34 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-stopped { overflow: hidden; }
 .lenis.lenis-scrolling iframe { pointer-events: none; }
 
-/* Patterns */
-.pattern-topo {
+/* Patterns — fine grid (visible across all sections, like the slides) */
+.pattern-grid {
   background-color: var(--cream);
   background-image:
-    radial-gradient(ellipse at 20% 30%, rgba(107, 78, 61, 0.10) 0%, transparent 35%),
-    radial-gradient(ellipse at 70% 80%, rgba(58, 90, 43, 0.08) 0%, transparent 40%),
-    repeating-radial-gradient(circle at 25% 40%, transparent 0, transparent 22px, rgba(107, 78, 61, 0.18) 22px, rgba(107, 78, 61, 0.18) 23px),
-    repeating-radial-gradient(circle at 75% 65%, transparent 0, transparent 28px, rgba(58, 90, 43, 0.14) 28px, rgba(58, 90, 43, 0.14) 29px);
+    linear-gradient(rgba(10, 31, 61, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 61, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-.pattern-iso {
-  background-color: #f4f8fb;
+.pattern-grid-fine {
   background-image:
-    linear-gradient(60deg, rgba(15, 30, 61, 0.08) 1px, transparent 1px),
-    linear-gradient(-60deg, rgba(15, 30, 61, 0.08) 1px, transparent 1px);
-  background-size: 40px 70px;
+    linear-gradient(rgba(10, 31, 61, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 61, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-.pattern-iso-faint {
-  background-color: var(--offwhite);
-  background-image:
-    linear-gradient(60deg, rgba(15, 30, 61, 0.05) 1px, transparent 1px),
-    linear-gradient(-60deg, rgba(15, 30, 61, 0.05) 1px, transparent 1px);
-  background-size: 50px 86px;
-}
-
-.pattern-iso-on-navy {
+.pattern-grid-on-navy {
   background-color: var(--navy);
   background-image:
-    linear-gradient(60deg, rgba(196, 220, 232, 0.08) 1px, transparent 1px),
-    linear-gradient(-60deg, rgba(196, 220, 232, 0.08) 1px, transparent 1px);
-  background-size: 40px 70px;
+    linear-gradient(rgba(201, 169, 97, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 169, 97, 0.10) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.pattern-dots-gold {
+  background-color: var(--cream);
+  background-image: radial-gradient(rgba(201, 169, 97, 0.45) 1.6px, transparent 1.6px);
+  background-size: 12px 12px;
 }
 
 /* 3D helpers */
@@ -87,16 +83,40 @@ html.lenis, html.lenis body { height: auto; }
 /* Scroll marker for the rail */
 .rail-dot {
   width: 10px; height: 10px; border-radius: 9999px;
-  background: rgba(15, 30, 61, 0.18);
+  background: rgba(10, 31, 61, 0.18);
   transition: transform 0.25s ease, background 0.25s ease;
 }
 .rail-dot.active {
-  background: var(--navy);
+  background: var(--gold);
   transform: scale(1.6);
+  box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.18);
 }
 
 /* Editorial selection */
-::selection { background: var(--sand); color: var(--charcoal); }
+::selection { background: var(--gold-soft); color: var(--navy); }
 
 /* Hide scrollbar on the lenis-driven body */
 body { scrollbar-gutter: stable; }
+
+/* Gold thread — frayed end SVG-like utility classes */
+.gold-thread {
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 12%, var(--gold-warm) 60%, var(--gold) 100%);
+}
+
+/* Glow */
+.cyan-glow { box-shadow: 0 0 0 0 rgba(45, 212, 224, 0.0), 0 0 28px rgba(45, 212, 224, 0.45); }
+.gold-glow { box-shadow: 0 0 0 0 rgba(201, 169, 97, 0.0), 0 0 28px rgba(201, 169, 97, 0.35); }
+
+/* Underline shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, var(--gold) 20%, var(--gold-soft) 50%, var(--gold) 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
