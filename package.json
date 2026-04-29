@@ -9,15 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "^9.114.0",
-    "@react-three/fiber": "^8.17.10",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
     "@studio-freight/lenis": "^1.0.42",
+    "@studio-freight/react-lenis": "^0.0.47",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.11.17",
-    "gsap": "^3.12.7",
+    "gsap": "^3.15.0",
     "lucide-react": "^0.460.0",
     "next": "14.2.18",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "split-type": "^0.3.4",
+    "tailwind-merge": "^3.5.0",
     "three": "^0.168.0"
   },
   "devDependencies": {
