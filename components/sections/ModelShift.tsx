@@ -26,7 +26,7 @@ export default function ModelShift() {
         <Reveal>
           <div className="eyebrow mb-3 text-navy/60">{shift.eyebrow}</div>
         </Reveal>
-        <h2 className="mb-16 font-serif text-5xl leading-[1.05] text-navy md:text-6xl lg:text-7xl">
+        <h2 className="mb-16 font-serif text-[2.6rem] leading-[1.02] text-navy md:text-7xl lg:text-[6rem]">
           <MaskText text="The Model Shift — Before vs. After." />
         </h2>
 

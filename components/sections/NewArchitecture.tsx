@@ -29,7 +29,7 @@ export default function NewArchitecture() {
           <div className="eyebrow mb-3 text-navy/60">{architecture.eyebrow}</div>
         </Reveal>
 
-        <h2 className="mb-4 font-serif text-5xl leading-[1.05] text-navy md:text-6xl lg:text-7xl">
+        <h2 className="mb-4 font-serif text-[2.6rem] leading-[1.02] text-navy md:text-7xl lg:text-[6rem]">
           <MaskText text="The New Architecture." />
         </h2>
         <p className="mb-16 max-w-2xl text-base text-ink md:text-lg">

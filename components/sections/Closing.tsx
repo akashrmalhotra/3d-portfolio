@@ -41,7 +41,7 @@ export default function Closing() {
           <TapeMorphSvg morphT={morphT} />
         </div>
 
-        <h2 className="font-serif text-5xl leading-[1.05] text-cream md:text-7xl lg:text-[5.5rem]">
+        <h2 className="font-serif text-[2.6rem] leading-[1.02] text-cream md:text-7xl lg:text-[6.5rem]">
           <MaskText text={closing.title} />
         </h2>
 

@@ -33,7 +33,7 @@ export default function DormantAsset() {
             <div className="eyebrow mb-3 text-gold/80">{dormant.eyebrow}</div>
           </Reveal>
 
-          <h2 className="font-serif text-5xl leading-[1.05] text-cream md:text-6xl lg:text-7xl">
+          <h2 className="font-serif text-[2.6rem] leading-[1.02] text-cream md:text-7xl lg:text-[6rem]">
             <MaskText text={dormant.title} />
           </h2>
 

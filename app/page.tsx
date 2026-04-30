@@ -17,6 +17,7 @@ import SmoothScroll from "@/components/ui/SmoothScroll";
 import StitchedRail from "@/components/ui/StitchedRail";
 import NeedleCursor from "@/components/ui/NeedleCursor";
 import Preloader from "@/components/ui/Preloader";
+import RaymondLogo from "@/components/ui/RaymondLogo";
 
 const ClothBackground = dynamic(() => import("@/components/ui/ClothBackground"), { ssr: false });
 
@@ -26,6 +27,7 @@ export default function Page() {
       <Preloader />
       <SmoothScroll />
       <ClothBackground />
+      <RaymondLogo />
       <StitchedRail />
       <NeedleCursor />
 

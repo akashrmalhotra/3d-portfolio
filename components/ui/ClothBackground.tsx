@@ -96,23 +96,24 @@ const VERT = /* glsl */ `
     float md = length(muv - uMouse);
     float wind = exp(-md * 1.6) * uWind;
 
-    // Hanging waveform
-    float t = uTime * 0.6;
-    float w1 = sin(uv.x * 6.0 + t * 1.2) * 0.06;
-    float w2 = sin(uv.y * 4.0 + t * 0.7 + uv.x * 3.0) * 0.04;
-    float w3 = noise(uv * 3.0 + t * 0.2) * 0.05;
-    float wave = (w1 + w2 + w3) * pin;
+    // Hanging waveform — always alive
+    float t = uTime * 0.85;
+    float w1 = sin(uv.x * 6.0 + t * 1.4) * 0.10;
+    float w2 = sin(uv.y * 4.0 + t * 0.9 + uv.x * 3.0) * 0.07;
+    float w3 = noise(uv * 3.5 + t * 0.35) * 0.08;
+    float w4 = sin((uv.x + uv.y) * 8.0 + t * 1.6) * 0.04;
+    float wave = (w1 + w2 + w3 + w4) * pin;
 
-    // Mouse-driven displacement
+    // Mouse-driven displacement — much stronger
     pos.z += wave;
-    pos.z += wind * 0.45 * pin;
-    pos.x += wind * (uMouse.x - muv.x) * 0.15 * pin;
-    pos.y += wind * (uMouse.y - muv.y) * 0.10 * pin;
+    pos.z += wind * 0.85 * pin;
+    pos.x += wind * (uMouse.x - muv.x) * 0.30 * pin;
+    pos.y += wind * (uMouse.y - muv.y) * 0.22 * pin;
 
-    // Pulse (click): expanding ring
+    // Pulse (click): expanding ring — bigger
     float pd = length(muv - uPulsePos);
-    float ring = exp(-pow((pd - uPulse * 1.4) * 4.0, 2.0));
-    pos.z += ring * uPulse * 0.6 * pin;
+    float ring = exp(-pow((pd - uPulse * 1.6) * 3.5, 2.0));
+    pos.z += ring * uPulse * 1.2 * pin;
 
     // Tension: contracts plane (when active = fabric pulls/tears)
     pos.xy *= 1.0 - uTear * 0.04 * sin(uv.x * 30.0 + t * 4.0);
@@ -484,13 +485,14 @@ export default function ClothBackground() {
       const dt = clock.getDelta();
       uniforms.uTime.value += dt;
 
-      // ease mouse
-      uniforms.uMouse.value.x += (target.x - uniforms.uMouse.value.x) * 0.05;
-      uniforms.uMouse.value.y += (target.y - uniforms.uMouse.value.y) * 0.05;
+      // ease mouse — faster catch-up so cloth feels glued to cursor
+      uniforms.uMouse.value.x += (target.x - uniforms.uMouse.value.x) * 0.12;
+      uniforms.uMouse.value.y += (target.y - uniforms.uMouse.value.y) * 0.12;
 
-      // wind grows when mouse moves; decays
+      // wind grows aggressively when mouse moves — slower decay so motion lingers
       const md = Math.hypot(target.x - uniforms.uMouse.value.x, target.y - uniforms.uMouse.value.y);
-      uniforms.uWind.value += (Math.min(0.6 + md * 2, 1.0) - uniforms.uWind.value) * 0.02;
+      const windTarget = Math.min(0.8 + md * 4, 1.4);
+      uniforms.uWind.value += (windTarget - uniforms.uWind.value) * 0.06;
 
       // pulse decay
       uniforms.uPulse.value *= 0.96;
