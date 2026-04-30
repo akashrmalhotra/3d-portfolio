@@ -1,0 +1,332 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0a1f3d;
+  --navy-light: #16315c;
+  --navy-deep: #06152b;
+  --gold: #c9a961;
+  --gold-warm: #b89348;
+  --gold-soft: #e2ce9c;
+  --cyan: #2dd4e0;
+  --cyan-light: #a8e6f0;
+  --cyan-deep: #0f8e9c;
+  --cream: #f5f1e8;
+  --cream-warm: #efe9d8;
+  --offwhite: #faf7ee;
+  --charcoal: #1a1a1a;
+  --ink: #4a4a4a;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; overflow-x: clip; }
+
+html { background: var(--cream); }
+
+body {
+  background: transparent;
+  color: var(--charcoal);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-playfair), Georgia, serif;
+  letter-spacing: -0.018em;
+  font-weight: 700;
+}
+
+h2 { line-height: 1.04; }
+
+/* Larger base body sizing for readable density */
+p, li { font-size: 1.05rem; }
+@media (min-width: 768px) { p, li { font-size: 1.1rem; } }
+
+/* Hide native cursor on devices that have a mouse */
+@media (hover: hover) and (pointer: fine) {
+  html, body, * { cursor: none !important; }
+}
+
+/* Lenis smooth-scroll required styles */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }
+
+/* ================== Patterns / fabric overlays ================== */
+
+.pattern-grid {
+  background-image:
+    linear-gradient(rgba(10, 31, 61, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 61, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.pattern-grid-fine {
+  background-image:
+    linear-gradient(rgba(10, 31, 61, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 61, 0.045) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.pattern-grid-on-navy {
+  background-image:
+    linear-gradient(rgba(201, 169, 97, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 169, 97, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.pattern-dots-gold {
+  background-image: radial-gradient(rgba(201, 169, 97, 0.45) 1.6px, transparent 1.6px);
+  background-size: 12px 12px;
+}
+
+.pattern-pinstripe {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(10, 31, 61, 0.16) 0 1px,
+    transparent 1px 18px
+  );
+}
+
+.pattern-pinstripe-soft {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(10, 31, 61, 0.08) 0 1px,
+    transparent 1px 22px
+  );
+}
+
+.pattern-weave {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(10,31,61,0.05) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(90deg, rgba(10,31,61,0.05) 0 1px, transparent 1px 4px);
+}
+
+.pattern-denim {
+  background-image:
+    repeating-linear-gradient(45deg,  rgba(10,31,61,0.08) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(-45deg, rgba(10,31,61,0.08) 0 1px, transparent 1px 6px);
+}
+
+.pattern-radial-weave {
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(201,169,97,0.05) 0, transparent 1px),
+    repeating-radial-gradient(circle at 50% 50%, rgba(10,31,61,0.05) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(45deg, rgba(10,31,61,0.03) 0 1px, transparent 1px 8deg),
+    repeating-linear-gradient(-45deg, rgba(10,31,61,0.03) 0 1px, transparent 1px 8deg);
+}
+
+.pattern-mandala {
+  background-image:
+    repeating-linear-gradient(30deg, rgba(201,169,97,0.07) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(-30deg, rgba(201,169,97,0.07) 0 1px, transparent 1px 14px),
+    repeating-radial-gradient(circle at 50% 50%, rgba(10,31,61,0.06) 0 1px, transparent 1px 26px);
+}
+
+.pattern-stitch-h {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--gold) 0 8px,
+    transparent 8px 14px
+  );
+  background-size: 14px 2px;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+/* Gold thread, frayed gradient */
+.gold-thread {
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 12%, var(--gold-warm) 60%, var(--gold) 100%);
+}
+
+/* ================== 3D / perspective helpers ================== */
+
+.preserve-3d { transform-style: preserve-3d; }
+.perspective-1000 { perspective: 1000px; }
+.perspective-1400 { perspective: 1400px; }
+.perspective-1800 { perspective: 1800px; }
+.backface-hidden { backface-visibility: hidden; }
+
+/* ================== Utility animations ================== */
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, var(--gold) 20%, var(--gold-soft) 50%, var(--gold) 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -14px, 0); }
+}
+.drift { animation: drift 7s ease-in-out infinite; }
+.drift-slow { animation: drift 11s ease-in-out infinite; }
+
+@keyframes float-rot {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50%      { transform: translate3d(0, -8px, 0) rotate(1.4deg); }
+}
+.float-rot { animation: float-rot 9s ease-in-out infinite; }
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50%      { transform: scale(1.025); filter: brightness(1.07); }
+}
+.breathe { animation: breathe 5.5s ease-in-out infinite; }
+
+@keyframes sway-x {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(8px); }
+}
+.sway-x { animation: sway-x 8s ease-in-out infinite; }
+
+@keyframes embers {
+  0%   { transform: translate(var(--ex,0), 0) scale(1); opacity: 1; }
+  100% { transform: translate(calc(var(--ex,0) * 2), -120px) scale(0); opacity: 0; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50%      { transform: scale(1.06); opacity: 1; }
+}
+.pulse-soft { animation: pulse-soft 2.4s ease-in-out infinite; }
+
+@keyframes flow-particle {
+  0%   { offset-distance: 0%;   opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+@keyframes thread-snap {
+  0%, 100% { transform: translateX(0); }
+  35%      { transform: translateX(2px) rotate(0.4deg); }
+  70%      { transform: translateX(-2px) rotate(-0.4deg); }
+}
+
+@keyframes spool {
+  to { transform: rotate(360deg); }
+}
+
+/* ================== Gloss / glow ================== */
+
+.cyan-glow { box-shadow: 0 0 28px rgba(45, 212, 224, 0.45); }
+.gold-glow { box-shadow: 0 0 28px rgba(201, 169, 97, 0.35); }
+.gold-glow-sm { box-shadow: 0 0 14px rgba(201, 169, 97, 0.5); }
+
+.glass-cream {
+  background: rgba(245, 241, 232, 0.72);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+}
+.glass-navy {
+  background: rgba(10, 31, 61, 0.82);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+}
+
+/* ================== Typography polish ================== */
+
+::selection { background: var(--gold-soft); color: var(--navy); }
+
+.eyebrow {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .eyebrow { font-size: 17px; }
+}
+
+/* Stitched underline on links */
+.link-stitch {
+  background-image: linear-gradient(
+    to right,
+    var(--gold) 50%,
+    transparent 50%
+  );
+  background-position: 0% 100%;
+  background-size: 200% 2px;
+  background-repeat: repeat-x;
+  transition: background-position 0.4s ease;
+}
+.link-stitch:hover { background-position: -100% 100%; }
+
+/* Focus ring as gold thread */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ================== Section & rail ================== */
+
+.rail-dot {
+  width: 10px; height: 10px; border-radius: 9999px;
+  background: rgba(10, 31, 61, 0.18);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.rail-dot.active {
+  background: var(--gold);
+  transform: scale(1.6);
+  box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.18);
+}
+
+/* Section panel — provides a subtle cream wash so the cloth bg shows through but text remains readable */
+.section-pane {
+  position: relative;
+  isolation: isolate;
+}
+.section-pane::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(245,241,232,0.55) 0%, rgba(245,241,232,0.40) 100%);
+  z-index: -1;
+  backdrop-filter: blur(3px) saturate(115%);
+  -webkit-backdrop-filter: blur(3px) saturate(115%);
+}
+.section-pane.dark::before {
+  background:
+    linear-gradient(180deg, rgba(10,31,61,0.70) 0%, rgba(6,21,43,0.80) 100%);
+}
+
+/* Soft text shadow for body copy over animated bg, keeps readability */
+.section-pane p, .section-pane li, .section-pane h2, .section-pane h3 {
+  text-shadow: 0 1px 0 rgba(245,241,232,0.5);
+}
+.section-pane.dark p, .section-pane.dark li, .section-pane.dark h2, .section-pane.dark h3 {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.45);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast tweaks */
+@media (prefers-contrast: more) {
+  body { color: #000; }
+  .text-ink { color: #000 !important; }
+}
+
+body { scrollbar-gutter: stable; }
