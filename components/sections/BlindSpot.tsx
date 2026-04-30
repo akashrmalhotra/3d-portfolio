@@ -311,15 +311,8 @@ function ThreadConnections({
           stroke="#C9A961"
           strokeWidth="0.35"
           strokeOpacity="0.45"
-        >
-          <animate
-            attributeName="stroke-dashoffset"
-            from="0"
-            to="-12"
-            dur={`${2 + (i % 3) * 0.4}s`}
-            repeatCount="indefinite"
-          />
-        </line>
+          strokeDasharray="6 6"
+        />
       ))}
     </svg>
   );

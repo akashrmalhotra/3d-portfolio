@@ -20,9 +20,7 @@
 }
 
 * { box-sizing: border-box; }
-html, body { height: 100%; }
-
-html, body { overflow-x: clip; }
+html, body { height: 100%; overflow-x: clip; }
 
 body {
   background: var(--cream);
@@ -112,12 +110,14 @@ html.lenis, html.lenis body { height: auto; }
   background-image:
     radial-gradient(circle at 50% 50%, rgba(201,169,97,0.05) 0, transparent 1px),
     repeating-radial-gradient(circle at 50% 50%, rgba(10,31,61,0.05) 0 1px, transparent 1px 14px),
-    repeating-conic-gradient(from 0deg at 50% 50%, rgba(10,31,61,0.04) 0deg 4deg, transparent 4deg 8deg);
+    repeating-linear-gradient(45deg, rgba(10,31,61,0.03) 0 1px, transparent 1px 8deg),
+    repeating-linear-gradient(-45deg, rgba(10,31,61,0.03) 0 1px, transparent 1px 8deg);
 }
 
 .pattern-mandala {
   background-image:
-    repeating-conic-gradient(from 0deg at 50% 50%, rgba(201,169,97,0.10) 0deg 6deg, transparent 6deg 12deg),
+    repeating-linear-gradient(30deg, rgba(201,169,97,0.07) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(-30deg, rgba(201,169,97,0.07) 0 1px, transparent 1px 14px),
     repeating-radial-gradient(circle at 50% 50%, rgba(10,31,61,0.06) 0 1px, transparent 1px 26px);
 }
 

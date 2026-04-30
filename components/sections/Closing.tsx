@@ -139,19 +139,14 @@ function TapeMorphSvg({ morphT }: { morphT: MotionValue<number> }) {
 
       {/* Glow numbers — shared tickOpacity */}
       {Array.from({ length: 8 }).map((_, i) => (
-        <motion.text
+        <text
           key={i}
           x={20 + i * 4 * 37} y="105"
           fontSize="9" fill="#0A1F3D" fillOpacity="0.55"
           textAnchor="middle" fontFamily="monospace"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-15%" }}
-          transition={{ delay: 0.8 + i * 0.05, duration: 0.4 }}
-          style={{ opacity: tickOpacity }}
         >
           {(i + 1) * 10}
-        </motion.text>
+        </text>
       ))}
 
       {/* Wave path */}
