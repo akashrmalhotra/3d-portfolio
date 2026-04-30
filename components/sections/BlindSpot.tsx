@@ -79,7 +79,7 @@ export default function BlindSpot() {
           <div className="eyebrow mb-3 text-navy/60">{blindspot.eyebrow}</div>
         </Reveal>
 
-        <h2 className="mb-12 font-serif text-4xl leading-tight text-navy md:text-5xl">
+        <h2 className="mb-12 font-serif text-5xl leading-[1.05] text-navy md:text-6xl lg:text-7xl">
           <MaskText text="The Blind Spot — The Five Actors Raymond Cannot See." />
         </h2>
 

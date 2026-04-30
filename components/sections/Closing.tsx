@@ -27,7 +27,7 @@ export default function Closing() {
       className="relative isolate flex min-h-screen w-full items-center overflow-hidden py-28"
     >
       {/* starfield + navy cloth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy to-navy-deep" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/80 to-navy-deep/90" />
       <div className="pointer-events-none absolute inset-0 pattern-grid-on-navy opacity-40" />
       <FloatingParticles />
 
@@ -41,12 +41,12 @@ export default function Closing() {
           <TapeMorphSvg morphT={morphT} />
         </div>
 
-        <h2 className="font-serif text-4xl leading-tight text-cream md:text-6xl lg:text-7xl">
+        <h2 className="font-serif text-5xl leading-[1.05] text-cream md:text-7xl lg:text-[5.5rem]">
           <MaskText text={closing.title} />
         </h2>
 
         <Reveal delay={0.5}>
-          <p className="mt-10 font-serif text-2xl italic text-gold md:text-4xl">
+          <p className="drift mt-10 font-serif text-3xl italic text-gold md:text-5xl lg:text-6xl">
             &ldquo;{closing.lead}&rdquo;
           </p>
         </Reveal>

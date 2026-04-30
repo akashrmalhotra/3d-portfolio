@@ -67,7 +67,7 @@ export default function StructuralFlaw() {
           <div className="eyebrow mb-3 text-navy/60">{flaw.eyebrow}</div>
         </Reveal>
 
-        <h2 className="font-serif text-4xl leading-tight text-navy md:text-5xl">
+        <h2 className="font-serif text-5xl leading-[1.05] text-navy md:text-6xl lg:text-7xl">
           <MaskText text="The Structural Flaw — The Pipeline That Breaks at the Point of Sale." />
         </h2>
 

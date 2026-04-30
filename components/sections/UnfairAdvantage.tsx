@@ -29,7 +29,7 @@ export default function UnfairAdvantage() {
         <Reveal>
           <div className="eyebrow mb-3 text-navy/60">{advantage.eyebrow}</div>
         </Reveal>
-        <h2 className="mb-16 font-serif text-4xl leading-tight text-navy md:text-5xl">
+        <h2 className="mb-16 font-serif text-5xl leading-[1.05] text-navy md:text-6xl lg:text-7xl">
           <MaskText text="The Unfair Advantage — The Capital Cost of Catching Up." />
         </h2>
 

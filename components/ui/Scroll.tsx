@@ -42,13 +42,13 @@ type RevealProps = {
   className?: string;
 };
 
-export function Reveal({ children, delay = 0, y = 40, className }: RevealProps) {
+export function Reveal({ children, delay = 0, y = 60, className }: RevealProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y, filter: "blur(8px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true, margin: "-15%" }}
-      transition={{ duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0, y, filter: "blur(12px)", scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
+      viewport={{ once: true, margin: "-10%" }}
+      transition={{ duration: 1.1, delay, ease: [0.16, 1, 0.3, 1] }}
       className={className}
     >
       {children}

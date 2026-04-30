@@ -24,7 +24,7 @@ export default function RaymondGlance() {
           <div className="eyebrow mb-3 text-navy/60">{glance.eyebrow}</div>
         </Reveal>
 
-        <h2 className="font-serif text-4xl leading-tight text-navy md:text-6xl">
+        <h2 className="font-serif text-5xl leading-[1.05] text-navy md:text-6xl lg:text-7xl">
           <MaskText text={glance.title} />
         </h2>
 
@@ -72,10 +72,10 @@ function Metric({
       className="flex flex-col items-center text-center"
     >
       <FabricCircle delay={0.5 + index * 0.18} />
-      <div className="mt-8 font-serif text-3xl font-bold text-navy md:text-4xl">
+      <div className="drift-slow mt-8 font-serif text-4xl font-bold text-navy md:text-5xl lg:text-6xl" style={{ animationDelay: `${index * 0.6}s` }}>
         <CountUp text={value} />
       </div>
-      <div className="mt-3 max-w-[220px] text-sm leading-snug text-ink">{label}</div>
+      <div className="mt-3 max-w-[220px] text-base leading-snug text-ink md:text-lg">{label}</div>
     </motion.div>
   );
 }
@@ -162,7 +162,7 @@ function UnfoldCallout({ text }: { text: string }) {
       className="mt-24 max-w-3xl rounded-xl border border-navy/30 bg-cream/85 p-6 shadow-[0_30px_70px_-30px_rgba(10,31,61,0.35)] md:p-8"
     >
       <div className="absolute -top-2 left-6 right-6 h-px bg-gold/40" />
-      <p className="font-serif text-lg italic leading-relaxed text-navy md:text-xl">
+      <p className="font-serif text-xl italic leading-relaxed text-navy md:text-2xl lg:text-3xl">
         {text}
       </p>
     </motion.div>

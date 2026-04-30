@@ -33,7 +33,7 @@ export default function DormantAsset() {
             <div className="eyebrow mb-3 text-gold/80">{dormant.eyebrow}</div>
           </Reveal>
 
-          <h2 className="font-serif text-4xl leading-tight text-cream md:text-5xl">
+          <h2 className="font-serif text-5xl leading-[1.05] text-cream md:text-6xl lg:text-7xl">
             <MaskText text={dormant.title} />
           </h2>
 
@@ -248,7 +248,7 @@ function NetworkViz({
             transition={{ delay: 1.2, duration: 0.9 }}
             className="rounded-2xl border border-gold/30 bg-navy/85 px-6 py-4 text-center shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] backdrop-blur"
           >
-            <div className="font-serif text-3xl font-bold text-cream md:text-4xl">
+            <div className="font-serif text-4xl font-bold text-cream md:text-5xl lg:text-6xl">
               <CountUpNum from={20} to={20} suffix=",000" /> →{" "}
               <CountUpNum from={0} to={2} suffix=",000,000" />
             </div>

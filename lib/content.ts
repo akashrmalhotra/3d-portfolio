@@ -101,8 +101,9 @@ export const dormant = {
   title: "20,000 Tailors, 2 Million Invisible Customers.",
   points: [
     "Raymond's 20,000 certified tailors are not a legacy training program. They are the pre-warmed, dormant supply side of a digital marketplace.",
-    "At a conservative 100 loyal clients per tailor, this network represents indirect relationships with 2 Million Indian consumers.",
-    "The permission layer — brand trust — already exists. The physical touchpoints — 1,500 stores — already exist.",
+    "At a conservative 100 loyal clients per tailor, this network represents indirect relationships with 2 Million Indian consumers — a customer base any digital-first competitor would spend a decade and ₹1,000+ Cr to assemble.",
+    "The permission layer — brand trust — already exists. The physical touchpoints — 1,500 stores — already exist. The fabric supply — Gwalior — is fully owned.",
+    "Every tailor is a node. Every store is a sensor. Every customer interaction is a signal — all of them currently un-instrumented and un-monetized.",
   ],
   punch: "We do not need to acquire the market. We just need to awaken it.",
 };
@@ -250,15 +251,19 @@ export const defensibility = {
   layers: [
     {
       label: "For Tailors",
-      body: "Entire client list, AI fit history, and reputation scores are digitized.",
+      body: "Entire client list, AI fit history, and reputation scores are digitized — leaving the platform means starting a tailoring business from absolute zero.",
     },
     {
       label: "For Customers",
-      body: "Body profile, multi-city tailor history, and wedding calendars established.",
+      body: "Body profile, multi-city tailor history, occasion calendars and wedding wardrobes are stored — re-creating them elsewhere requires months of measurements and re-fittings.",
     },
     {
       label: "For Corporates",
-      body: "10,000 employee measurements centralized for automated reordering.",
+      body: "10,000+ employee measurements centralized for automated reordering across cities — switching means re-measuring an entire workforce and renegotiating every vendor.",
+    },
+    {
+      label: "For Wedding Planners",
+      body: "Coordinated trousseaus across grooms, groomsmen and multi-city families — the relational graph itself becomes the product.",
     },
   ],
   moat:
@@ -329,5 +334,5 @@ export const closing = {
   eyebrow: "13 · The Closing Statement",
   title: "The synthesis of transactions into identities.",
   lead: "The tape measure was always the product.",
-  body: "Raymond isn't abandoning its 100-year history to become a tech company. It is finally monetizing the intimate interactions its fabric has always facilitated. The market is ready. The assets are assembled. The only thing missing is the platform.",
+  body: "Raymond isn't abandoning its 100-year history to become a tech company. It is finally monetizing the intimate interactions its fabric has always facilitated. Every wedding, every boardroom, every first job interview — Raymond was already there in the cloth. The platform simply digitizes the relationship that the brand already owns. The market is ready. The assets are assembled. The capital is in place. The only thing missing is the platform.",
 };

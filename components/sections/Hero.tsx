@@ -38,7 +38,7 @@ export default function Hero() {
       className="relative isolate flex min-h-screen w-full items-center overflow-hidden"
     >
       {/* Soft cream wash so text reads over the live cloth bg */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-cream/40 via-cream/15 to-cream/55" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-cream/15 via-transparent to-cream/30" />
       <div className="pointer-events-none absolute inset-0 pattern-grid-fine opacity-40" />
 
       {/* Floating eyebrow + crest mark */}

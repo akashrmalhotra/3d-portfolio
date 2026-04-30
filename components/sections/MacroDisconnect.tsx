@@ -25,7 +25,7 @@ export default function MacroDisconnect() {
           <div className="eyebrow mb-3 text-navy/60">{macro.eyebrow}</div>
         </Reveal>
 
-        <h2 className="mb-20 font-serif text-4xl leading-tight text-navy md:text-6xl">
+        <h2 className="mb-20 font-serif text-5xl leading-[1.05] text-navy md:text-6xl lg:text-7xl">
           <MaskText text="The Macro Disconnect" />
         </h2>
 
@@ -41,7 +41,7 @@ export default function MacroDisconnect() {
             <div className="absolute inset-0 pattern-weave opacity-70" />
             <div className="relative flex h-full items-center justify-center p-12 md:p-16">
               <div className="rounded-xl border border-navy/15 bg-cream/95 p-8 shadow-[0_30px_80px_-30px_rgba(10,31,61,0.30)]">
-                <div className="font-serif text-5xl font-bold text-navy md:text-6xl">
+                <div className="drift font-serif text-6xl font-bold text-navy md:text-7xl lg:text-[6rem]">
                   <StitchedNumber text={macro.left.big} />
                 </div>
                 <div className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-navy/70">
@@ -95,7 +95,7 @@ export default function MacroDisconnect() {
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col justify-center px-2 md:px-12"
           >
-            <div className="font-serif text-5xl font-bold leading-tight text-navy md:text-6xl">
+            <div className="drift-slow font-serif text-6xl font-bold leading-tight text-navy md:text-7xl lg:text-[6rem]" style={{ animationDelay: "1.4s" }}>
               <StitchedNumber text={macro.right.big} />
             </div>
             <ul className="mt-10 space-y-6 text-lg leading-relaxed text-ink md:text-xl">

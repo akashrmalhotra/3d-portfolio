@@ -22,8 +22,10 @@
 * { box-sizing: border-box; }
 html, body { height: 100%; overflow-x: clip; }
 
+html { background: var(--cream); }
+
 body {
-  background: var(--cream);
+  background: transparent;
   color: var(--charcoal);
   font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 18px;
@@ -34,9 +36,15 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-playfair), Georgia, serif;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.018em;
   font-weight: 700;
 }
+
+h2 { line-height: 1.04; }
+
+/* Larger base body sizing for readable density */
+p, li { font-size: 1.05rem; }
+@media (min-width: 768px) { p, li { font-size: 1.1rem; } }
 
 /* Hide native cursor on devices that have a mouse */
 @media (hover: hover) and (pointer: fine) {
@@ -162,9 +170,28 @@ html.lenis, html.lenis body { height: auto; }
 
 @keyframes drift {
   0%, 100% { transform: translate3d(0, 0, 0); }
-  50%      { transform: translate3d(0, -10px, 0); }
+  50%      { transform: translate3d(0, -14px, 0); }
 }
 .drift { animation: drift 7s ease-in-out infinite; }
+.drift-slow { animation: drift 11s ease-in-out infinite; }
+
+@keyframes float-rot {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50%      { transform: translate3d(0, -8px, 0) rotate(1.4deg); }
+}
+.float-rot { animation: float-rot 9s ease-in-out infinite; }
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50%      { transform: scale(1.025); filter: brightness(1.07); }
+}
+.breathe { animation: breathe 5.5s ease-in-out infinite; }
+
+@keyframes sway-x {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(8px); }
+}
+.sway-x { animation: sway-x 8s ease-in-out infinite; }
 
 @keyframes embers {
   0%   { transform: translate(var(--ex,0), 0) scale(1); opacity: 1; }
@@ -266,12 +293,14 @@ html.lenis, html.lenis body { height: auto; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(245,241,232,0.72) 0%, rgba(245,241,232,0.55) 100%);
+    linear-gradient(180deg, rgba(245,241,232,0.42) 0%, rgba(245,241,232,0.28) 100%);
   z-index: -1;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 .section-pane.dark::before {
   background:
-    linear-gradient(180deg, rgba(10,31,61,0.75) 0%, rgba(6,21,43,0.85) 100%);
+    linear-gradient(180deg, rgba(10,31,61,0.62) 0%, rgba(6,21,43,0.72) 100%);
 }
 
 /* Reduced motion */
