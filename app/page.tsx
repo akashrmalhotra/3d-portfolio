@@ -13,35 +13,20 @@ import MarketImpact from "@/components/sections/MarketImpact";
 import UnfairAdvantage from "@/components/sections/UnfairAdvantage";
 import Closing from "@/components/sections/Closing";
 import SmoothScroll from "@/components/ui/SmoothScroll";
-import ScrollProgress from "@/components/ui/ScrollProgress";
-import ScrollBar from "@/components/ui/ScrollBar";
-import { HoverCursor, BackgroundStage } from "@/components/ui/Cinematic";
+import StitchedRail from "@/components/ui/StitchedRail";
+import NeedleCursor from "@/components/ui/NeedleCursor";
+import ClothBackground from "@/components/ui/ClothBackground";
+import Preloader from "@/components/ui/Preloader";
 
 export default function Page() {
   return (
     <>
+      <Preloader />
       <SmoothScroll />
-      <ScrollBar />
-      <ScrollProgress />
-      <HoverCursor />
-      <BackgroundStage
-        stops={[
-          "#F5F1E8", // hero
-          "#EFE9D8", // glance
-          "#F5F1E8", // macro
-          "#EFE9D8", // flaw
-          "#F5F1E8", // blindspot
-          "#EFE9D8", // dormant
-          "#F5F1E8", // catalyst
-          "#EFE9D8", // architecture
-          "#F5F1E8", // exchange
-          "#EFE9D8", // shift
-          "#F5F1E8", // defensibility
-          "#EFE9D8", // impact
-          "#F5F1E8", // advantage
-          "#0A1F3D", // closing
-        ]}
-      />
+      <ClothBackground />
+      <StitchedRail />
+      <NeedleCursor />
+
       <main className="relative">
         <Hero />
         <RaymondGlance />

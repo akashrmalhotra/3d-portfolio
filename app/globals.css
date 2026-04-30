@@ -20,8 +20,9 @@
 }
 
 * { box-sizing: border-box; }
-
 html, body { height: 100%; }
+
+html, body { overflow-x: clip; }
 
 body {
   background: var(--cream);
@@ -30,12 +31,18 @@ body {
   font-size: 18px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-playfair), Georgia, serif;
   letter-spacing: -0.015em;
   font-weight: 700;
+}
+
+/* Hide native cursor on devices that have a mouse */
+@media (hover: hover) and (pointer: fine) {
+  html, body, * { cursor: none !important; }
 }
 
 /* Lenis smooth-scroll required styles */
@@ -45,69 +52,101 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-stopped { overflow: hidden; }
 .lenis.lenis-scrolling iframe { pointer-events: none; }
 
-/* Patterns — fine grid (visible across all sections, like the slides) */
+/* ================== Patterns / fabric overlays ================== */
+
 .pattern-grid {
-  background-color: var(--cream);
   background-image:
-    linear-gradient(rgba(10, 31, 61, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 31, 61, 0.07) 1px, transparent 1px);
+    linear-gradient(rgba(10, 31, 61, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 61, 0.06) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
 .pattern-grid-fine {
   background-image:
-    linear-gradient(rgba(10, 31, 61, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 31, 61, 0.05) 1px, transparent 1px);
-  background-size: 24px 24px;
+    linear-gradient(rgba(10, 31, 61, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 61, 0.045) 1px, transparent 1px);
+  background-size: 18px 18px;
 }
 
 .pattern-grid-on-navy {
-  background-color: var(--navy);
   background-image:
-    linear-gradient(rgba(201, 169, 97, 0.10) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201, 169, 97, 0.10) 1px, transparent 1px);
+    linear-gradient(rgba(201, 169, 97, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 169, 97, 0.08) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
 .pattern-dots-gold {
-  background-color: var(--cream);
   background-image: radial-gradient(rgba(201, 169, 97, 0.45) 1.6px, transparent 1.6px);
   background-size: 12px 12px;
 }
 
-/* 3D helpers */
-.preserve-3d { transform-style: preserve-3d; }
-.perspective-1000 { perspective: 1000px; }
-.perspective-1400 { perspective: 1400px; }
-
-/* Scroll marker for the rail */
-.rail-dot {
-  width: 10px; height: 10px; border-radius: 9999px;
-  background: rgba(10, 31, 61, 0.18);
-  transition: transform 0.25s ease, background 0.25s ease;
-}
-.rail-dot.active {
-  background: var(--gold);
-  transform: scale(1.6);
-  box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.18);
+.pattern-pinstripe {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(10, 31, 61, 0.16) 0 1px,
+    transparent 1px 18px
+  );
 }
 
-/* Editorial selection */
-::selection { background: var(--gold-soft); color: var(--navy); }
+.pattern-pinstripe-soft {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(10, 31, 61, 0.08) 0 1px,
+    transparent 1px 22px
+  );
+}
 
-/* Hide scrollbar on the lenis-driven body */
-body { scrollbar-gutter: stable; }
+.pattern-weave {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(10,31,61,0.05) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(90deg, rgba(10,31,61,0.05) 0 1px, transparent 1px 4px);
+}
 
-/* Gold thread — frayed end SVG-like utility classes */
+.pattern-denim {
+  background-image:
+    repeating-linear-gradient(45deg,  rgba(10,31,61,0.08) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(-45deg, rgba(10,31,61,0.08) 0 1px, transparent 1px 6px);
+}
+
+.pattern-radial-weave {
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(201,169,97,0.05) 0, transparent 1px),
+    repeating-radial-gradient(circle at 50% 50%, rgba(10,31,61,0.05) 0 1px, transparent 1px 14px),
+    repeating-conic-gradient(from 0deg at 50% 50%, rgba(10,31,61,0.04) 0deg 4deg, transparent 4deg 8deg);
+}
+
+.pattern-mandala {
+  background-image:
+    repeating-conic-gradient(from 0deg at 50% 50%, rgba(201,169,97,0.10) 0deg 6deg, transparent 6deg 12deg),
+    repeating-radial-gradient(circle at 50% 50%, rgba(10,31,61,0.06) 0 1px, transparent 1px 26px);
+}
+
+.pattern-stitch-h {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--gold) 0 8px,
+    transparent 8px 14px
+  );
+  background-size: 14px 2px;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+/* Gold thread, frayed gradient */
 .gold-thread {
   background: linear-gradient(90deg, transparent 0%, var(--gold) 12%, var(--gold-warm) 60%, var(--gold) 100%);
 }
 
-/* Glow */
-.cyan-glow { box-shadow: 0 0 0 0 rgba(45, 212, 224, 0.0), 0 0 28px rgba(45, 212, 224, 0.45); }
-.gold-glow { box-shadow: 0 0 0 0 rgba(201, 169, 97, 0.0), 0 0 28px rgba(201, 169, 97, 0.35); }
+/* ================== 3D / perspective helpers ================== */
 
-/* Underline shimmer */
+.preserve-3d { transform-style: preserve-3d; }
+.perspective-1000 { perspective: 1000px; }
+.perspective-1400 { perspective: 1400px; }
+.perspective-1800 { perspective: 1800px; }
+.backface-hidden { backface-visibility: hidden; }
+
+/* ================== Utility animations ================== */
+
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
@@ -120,3 +159,134 @@ body { scrollbar-gutter: stable; }
   color: transparent;
   animation: shimmer 6s linear infinite;
 }
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -10px, 0); }
+}
+.drift { animation: drift 7s ease-in-out infinite; }
+
+@keyframes embers {
+  0%   { transform: translate(var(--ex,0), 0) scale(1); opacity: 1; }
+  100% { transform: translate(calc(var(--ex,0) * 2), -120px) scale(0); opacity: 0; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50%      { transform: scale(1.06); opacity: 1; }
+}
+.pulse-soft { animation: pulse-soft 2.4s ease-in-out infinite; }
+
+@keyframes flow-particle {
+  0%   { offset-distance: 0%;   opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+@keyframes thread-snap {
+  0%, 100% { transform: translateX(0); }
+  35%      { transform: translateX(2px) rotate(0.4deg); }
+  70%      { transform: translateX(-2px) rotate(-0.4deg); }
+}
+
+@keyframes spool {
+  to { transform: rotate(360deg); }
+}
+
+/* ================== Gloss / glow ================== */
+
+.cyan-glow { box-shadow: 0 0 28px rgba(45, 212, 224, 0.45); }
+.gold-glow { box-shadow: 0 0 28px rgba(201, 169, 97, 0.35); }
+.gold-glow-sm { box-shadow: 0 0 14px rgba(201, 169, 97, 0.5); }
+
+.glass-cream {
+  background: rgba(245, 241, 232, 0.72);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+}
+.glass-navy {
+  background: rgba(10, 31, 61, 0.82);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+}
+
+/* ================== Typography polish ================== */
+
+::selection { background: var(--gold-soft); color: var(--navy); }
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+/* Stitched underline on links */
+.link-stitch {
+  background-image: linear-gradient(
+    to right,
+    var(--gold) 50%,
+    transparent 50%
+  );
+  background-position: 0% 100%;
+  background-size: 200% 2px;
+  background-repeat: repeat-x;
+  transition: background-position 0.4s ease;
+}
+.link-stitch:hover { background-position: -100% 100%; }
+
+/* Focus ring as gold thread */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ================== Section & rail ================== */
+
+.rail-dot {
+  width: 10px; height: 10px; border-radius: 9999px;
+  background: rgba(10, 31, 61, 0.18);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.rail-dot.active {
+  background: var(--gold);
+  transform: scale(1.6);
+  box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.18);
+}
+
+/* Section panel — provides a subtle cream wash so the cloth bg shows through but text remains readable */
+.section-pane {
+  position: relative;
+  isolation: isolate;
+}
+.section-pane::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(245,241,232,0.72) 0%, rgba(245,241,232,0.55) 100%);
+  z-index: -1;
+}
+.section-pane.dark::before {
+  background:
+    linear-gradient(180deg, rgba(10,31,61,0.75) 0%, rgba(6,21,43,0.85) 100%);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast tweaks */
+@media (prefers-contrast: more) {
+  body { color: #000; }
+  .text-ink { color: #000 !important; }
+}
+
+body { scrollbar-gutter: stable; }
