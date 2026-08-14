@@ -1,4 +1,4 @@
-# AASHU
+# ASHU
 
 ## Full-Stack Developer | Building in the Dark 💜
 
