@@ -1,4 +1,4 @@
-# ASHISH
+# ASHISH DOHARE
 
 ## Full-Stack Developer | Building in the Dark 💜
 
